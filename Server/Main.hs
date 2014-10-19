@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings, ScopedTypeVariables #-}
 
-module Server.Interface where
+module Main where
 	
 import Server.Core.Handler
 import Happstack.Lite	
