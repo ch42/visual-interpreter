@@ -43,14 +43,9 @@
 }
 
 .mixin-highlight-bvars .bvar[data-id = "6"] {
-    color: rgba(99,0,255,1);
-	background-color: rgba(190,150,255,0.6);
-}
-
-/*.mixin-highlight-bvars .bvar[data-id = "6"] {
 	color: rgba(255,0,246,1);
 	background-color: rgba(255,150,252,0.6);
-}*/
+}
 
 .mixin-highlight-bvars .bvar[data-id = "7"] {
 	color: rgba(255,0,55,1);
