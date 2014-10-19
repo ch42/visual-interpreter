@@ -1,0 +1,169 @@
+/*
+**	THEME FOR WORKSPACE "Review Changes"
+*/
+
+/* 
+**	EXPRESSION RENDERING 
+**	Workspace uses modified mixin "mixin-render-expr-basic" to render lambda expressions
+*/
+
+.workspace-review-changes  #currentExprContainer .substitute {
+	display: none;
+	padding: 0.3em 0.4em 0.3em 0.4em;
+}
+
+.workspace-review-changes #currentExprContainer [data-annotation="arrowSource"] {
+	background-color: #d1f7d1;
+	padding: 0.2em;
+}
+
+.workspace-review-changes #currentExprContainer [data-annotation="arrowTarget"] {
+	background-color: #fed8d8;
+	padding: 0.2em;
+}
+
+
+.workspace-review-changes .alphaConversion {
+	background-color: #d1f7d1;
+	margin: 0em 0.1em 0em 0.1em;
+	padding: 0.2em 0.2em 0em 0.2em;
+	min-width: 1em;
+	text-align: center;
+}
+
+.workspace-review-changes .alphaConversion::after {
+	content: attr(data-old-var-name);
+	display: block;
+	background-color: #fed8d8;
+	margin: 0.2em -0.2em 0em -0.2em;
+	padding: 0.1em 0.2em 0.2em 0.2em;
+	text-align: center;
+
+}
+
+
+.workspace-review-changes #currentExprContainer .line-through {
+	text-decoration: line-through;
+	color: #ccc !important;
+}
+
+/*
+** Fixes for Gecko Rendering-Engine (Firefox etc.)
+*/ 
+@-moz-document url-prefix() {
+	.workspace-review-changes #currentExprContainer [data-annotation="arrowSource"] {
+		padding: 0.2em 0.08em 0.2em 0.08em;
+		margin: 0em 0.13em 0em 0.13em;
+	}
+
+	.workspace-review-changes #currentExprContainer [data-annotation="arrowTarget"] {
+		padding: 0.2em 0.08em 0.2em 0.08em;
+		margin: 0em 0.13em 0em 0.13em;
+	}
+	
+}
+
+
+
+/*
+**	HISTORY
+*/
+
+.workspace-review-changes #historyContainer .historyItem {
+	display: block !important;
+	
+	font-size: 14px;
+	font-weight: 200;
+	
+	background-color: #f4f4f4;
+	border-left: 4px solid #ccc;
+	transition: background-color 0.3s;
+	
+	padding: 8px 8px 8px 12px;
+	margin: 0px 0px 12px 0px;
+}
+
+.workspace-review-changes #historyContainer .historyItem:hover {
+	background-color: #efefef;
+}
+
+.workspace-review-changes #historyContainer .substitution {
+	transition: all 0.15s ease-in-out;
+	text-align: center;
+}
+
+.workspace-review-changes #historyContainer .substitution > .predecessor {
+	display: block;
+	background-color: #fed8d8;
+	padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+.workspace-review-changes #historyContainer .substitution > .substitute {
+	display: block;
+	background-color: #d1f7d1;
+	padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+.workspace-review-changes #historyContainer .keyword > .name {
+	text-align: center;
+	background-color: #ddd;
+	font-size: 0.9em;
+	padding: 0.15em 0.2em 0.1em 0.2em;
+}
+
+.workspace-review-changes #historyContainer .keyword > .name:hover {
+	background-color: #e1e1e1;
+}
+
+.workspace-review-changes #historyContainer .keyword > .expr {
+	display: none;
+}
+
+.workspace-review-changes #historyContainer .label {
+	float: right;
+	width: 84px;
+	transition: background-color 0.3s;
+	background-color: #777 !important;
+}
+
+.workspace-review-changes #historyContainer .selection {
+	border-left: 4px solid #777;
+}
+
+
+.workspace-review-changes #historyContainer .selection .label {
+	background-color: #fe4040 !important;
+}
+
+
+/* 	
+**	DROPDOWNS 
+*/
+.workspace-review-changes #dropdown-redex {
+	display: none;
+}
+
+.workspace-review-changes #dropdown-bvar {
+	display: none;
+}
+
+.workspace-review-changes #dropdown-fvar {
+	display: none;
+}
+
+/* 
+**	CONTAINER VISIBILITY AND STYLES 
+*/
+.workspace-review-changes #outputContainer {
+	min-height: 250px;
+}
+
+.workspace-review-changes #bracketMixinContainer,
+.workspace-review-changes #highlightingMixinsContainer {
+	display: none;
+}
+
+
+
+
+

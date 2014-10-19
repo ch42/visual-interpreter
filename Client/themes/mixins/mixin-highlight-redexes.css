@@ -1,0 +1,23 @@
+/*
+**	MIXIN "Highlight Reducable Expressions"
+*/
+
+.mixin-highlight-redexes .redex {
+	border: 1px solid #ddd;
+	border-radius: 0.4em;
+	padding: 0.4em 0.3em 0.4em 0.3em;
+	margin: 0em 0.25em 0em 0.25em;
+}
+
+.mixin-highlight-redexes .redex .keyword {
+    margin: 0.2em;
+}	
+
+.mixin-highlight-redexes .redex.selection {
+	border: 0.10em solid #999;
+}
+
+.mixin-highlight-redexes #dropdown-redex {
+	display: inline;
+}
+

@@ -1,0 +1,154 @@
+/*
+**	MIXIN "Highlight Bounded Variables"
+*/
+
+.mixin-highlight-bvars .bvar{
+	min-width: 1em;
+	padding: 0.14em 0.1em 0.14em 0.1em;
+	border-radius: 0.2em;
+}
+
+.mixin-highlight-bvars .bvar.selection {
+	font-size: 1.3em;
+	font-weight: 400 !important;
+}
+
+.mixin-highlight-bvars #dropdown-bvar {
+	display: inline;
+}
+
+.mixin-highlight-bvars .bvar[data-id = "1"] {
+	color: rgba(87,218,0,1);
+	background-color: rgba(180,240,141,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "2"] {
+	color: rgba(0,204,105,1);
+	background-color: rgba(137,234,187,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "3"] {
+	color: rgba(0,123,204,1);
+	background-color: rgba(137,196,234,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "4"] {
+	color: rgba(0,39,255,1);
+	background-color: rgba(150,166,255,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "5"] {
+    color: rgba(99,0,255,1);
+	background-color: rgba(190,150,255,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "6"] {
+    color: rgba(99,0,255,1);
+	background-color: rgba(190,150,255,0.6);
+}
+
+/*.mixin-highlight-bvars .bvar[data-id = "6"] {
+	color: rgba(255,0,246,1);
+	background-color: rgba(255,150,252,0.6);
+}*/
+
+.mixin-highlight-bvars .bvar[data-id = "7"] {
+	color: rgba(255,0,55,1);
+	background-color: rgba(255,150,173,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "8"] {
+	color: rgba(255,45,0,1);
+	background-color: rgba(255,168,150,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "9"] {
+	color: rgba(255,124,0,1);
+	background-color: rgba(255,201,150,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "10"] {
+	color: rgba(255,175,0,1);
+	background-color: rgba(255,222,150,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "11"] {
+	color: rgba(255,208,0,1);
+	background-color: rgba(255,243,150,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "12"] {
+	color: rgba(218,228,0,1);
+	background-color: rgba(241,250,147,0.6);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "13"] {
+	color: rgba(87,218,0,0.8);
+	background-color: rgba(180,240,141,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "14"] {
+	color: rgba(0,204,105,0.8);
+	background-color: rgba(137,234,187,0.4);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "15"] {
+	color: rgba(0,123,204,0.8);
+	background-color: rgba(137,196,234,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "16"] {
+	color: rgba(0,39,255,0.8);
+	background-color: rgba(150,166,255,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "17"] {
+    color: rgba(99,0,255,0.8);
+	background-color: rgba(190,150,255,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "18"] {
+	color: rgba(255,0,246,0.8);
+	background-color: rgba(255,150,252,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "19"] {
+	color: rgba(255,0,55,0.8);
+	background-color: rgba(255,150,173,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "20"] {
+	color: rgba(255,45,0,0.8);
+	background-color: rgba(255,168,150,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "21"] {
+	color: rgba(255,124,0,0.8);
+	background-color: rgba(255,201,150,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "22"] {
+	color: rgba(255,175,0,0.8);
+	background-color: rgba(255,222,150,0.35);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "23"] {
+	color: rgba(255,208,0,0.85);
+	background-color: rgba(255,243,150,0.4);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "24"] {
+	color: rgba(218,228,0,0.85);
+	background-color: rgba(241,250,147,0.4);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "25"] {
+	color: rgba(87,218,0,0.6);
+	background-color: rgba(180,240,141,0.2);
+}
+
+.mixin-highlight-bvars .bvar[data-id = "26"] {
+	color: rgba(0,204,105,0.6);
+	background-color: rgba(137,234,187,0.2);
+}
+

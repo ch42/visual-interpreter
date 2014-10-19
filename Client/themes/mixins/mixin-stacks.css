@@ -1,0 +1,61 @@
+/*
+**	MIXIN "Stacks"
+**  All (including optional) brackets are shown as 3D stacks 
+*/
+
+
+.mixin-stacks .expr .redex {
+	border-width: 0.18em;
+}
+
+.mixin-stacks .expr .redex.selection {
+	border-width: 0.2em;
+}
+
+.mixin-stacks .expr [data-lambda="optional"]::before {
+	display: inline-block;
+}
+
+.mixin-stacks .expr [data-dot]::before {
+	display: none;
+}
+
+.mixin-stacks .abstrHead::after {
+	content: ".";
+	padding-left: 0.14em;
+}
+
+.mixin-stacks .abstrHead {
+	margin-right: -0.2em;
+}
+
+.mixin-stacks .expr [data-brackets="optional"] {
+	color: #999;
+}
+
+.mixin-stacks .expr [data-brackets="optional"]::before, 
+.mixin-stacks .expr [data-brackets="optional"]::after {
+	font-weight: 100;
+}
+
+.mixin-stacks .expr [data-brackets="obligatory"]::before, 
+.mixin-stacks .expr [data-brackets="obligatory"]::after {
+	content: none !important;
+}
+
+.mixin-stacks .expr [data-brackets] {
+	border-radius: 0.3em;
+	box-shadow: 0.03em 0.05em 0.16em #777;
+	padding: 0.25em 0.4em 0.25em 0.4em;
+	margin: 0.1em 0.4em 0.1em 0.4em;
+}
+
+/*
+** Fixes for Gecko Rendering-Engine (Firefox etc.)
+*/ 
+@-moz-document url-prefix() {
+	.mixin-stacks .abstrHead::after {
+		padding-left: 0.07em !important;
+		padding-right: 0.27em !important;
+	}	
+}

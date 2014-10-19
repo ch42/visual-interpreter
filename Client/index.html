@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Visuaλ Interpreter</title>
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,200,300,400" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="css/libs/foundation.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Workspaces -->
+    <link href="themes/workspaces/workspace-manipulate.css" rel="stylesheet">
+    <link href="themes/workspaces/workspace-review-changes.css" rel="stylesheet">
+
+    <!-- Mixins -->
+    <link href="themes/mixins/mixin-render-expr-basic.css" rel="stylesheet">
+    <link href="themes/mixins/mixin-stacks.css" rel="stylesheet">
+    <link href="themes/mixins/mixin-highlight-bvars.css" rel="stylesheet">
+    <link href="themes/mixins/mixin-highlight-fvars.css" rel="stylesheet">
+    <link href="themes/mixins/mixin-highlight-redexes.css" rel="stylesheet">
+
+    <!-- Javascript -->
+    <script src="js/libs/jquery.js"></script>
+	<script src="js/libs/jquery.insertAtCaret.js"></script>
+    <script src="js/libs/jquery.hotkeys.js"></script>
+    <script src="js/libs/foundation.min.js"></script>
+    <script src="js/libs/modernizr.js"></script>
+    <script src="js/visual.js"></script>
+</head>
+
+<body>
+    <div id="sidebar" data-themeable>
+        <a href="#" id="buttonToggleSidebar" class="button tiny secondary" style="float: right; padding: 12px">
+        	<img src="img/hide-sidebar.svg" width="5" alt="Hide">
+        </a>
+
+        <div class="container" id="logoContainer">
+            <img src="img/visual-logo.svg" width="85" alt="Visual Interpreter">
+        </div>
+
+        <div class="container">
+            <h2>Workspace</h2>
+            <select id="selectWorkspace">
+                <option value="workspace-manipulate">Manipulate</option>
+                <option value="workspace-review-changes">Review Changes</option>
+            </select>
+        </div>
+		
+        <div class="container">
+            <h2>Keywords</h2>
+			<div id="keywordList">
+	
+			</div>	
+            <input id="checkboxFoldingMode" type="checkbox">
+            <label for="checkboxFoldingMode">Expand automatically</label>
+        </div>
+		
+        <div id="zoomContainer" class="container">
+            <h2>Zoom</h2>
+            <div id="sliderZoom" class="range-slider" data-options="start: 10; end: 90;" data-slider="26">
+                <span class="range-slider-handle secondary"></span>
+                <span class="range-slider-active-segment"></span>
+                <input type="hidden">
+            </div>
+        </div>
+
+        <div id="highlightingMixinsContainer" class="container">
+            <h2>Highlighting</h2>
+
+            <input name="highlightMixins" id="checkboxHighlightRedexes" type="checkbox" checked>
+            <label for="checkboxHighlightRedexes">Redexes</label>
+            <br>
+
+            <input name="highlightMixins" id="checkboxHighlightBoundedVars" type="checkbox" checked>
+            <label for="checkboxHighlightBoundedVars">Bounded Variables</label>
+            <br>
+
+            <input name="highlightMixins" id="checkboxHighlightFreeVars" type="checkbox">
+            <label for="checkboxHighlightFreeVars">Free Variables</label>
+            <br>
+        </div>
+
+        <div id="bracketMixinContainer" class="container">
+            <h2>Brackets</h2>
+            <input name="bracketMixin" id="radioBracketMixinNone" type="radio" value="none" checked>
+            <label for="radioBracketMixinNone">Normal</label>
+            <br>
+            <input name="bracketMixin" id="radioBracketMixinStacks" type="radio" value="mixin-stacks">
+            <label for="radioBracketMixinStacks">Stacks</label>
+        </div>	    
+    </div>
+
+    <div id="editor" data-themeable data-allows-mixins>
+        <div class="container">
+            <form>
+                <textarea id="textareaEditor" class="error" placeholder="Enter your expression here!"></textarea>
+                <small id="errorMsg" class="error errorMsgContainer"></small>
+            </form>
+            <a href="#" id="buttonParse" class="button tiny secondary">Parse λ-Expression</a>
+        </div>
+
+        <div id="outputContainer">			
+			<div id="currentExprContainer" class="container">
+
+        	</div>
+			
+			<div id="canvasContainer">
+				<svg id="canvas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<defs>
+					    <marker id="markerArrow" markerWidth="13" markerHeight="13" refx="2" refy="6"
+					           orient="auto">
+					        <path class="arrowHead" d="M2,2 L2,11 L10,6 L2,2" />
+					    </marker>
+					</defs>
+				</svg>
+			</div>	
+		</div>	
+
+        <div id="historyContainer" class="container">
+            <h2>History</h2>
+            <div id="history">
+            </div>
+        </div>
+        
+        <!-- Dropdowns -->
+        <div id="dropdown-fvar" data-dropdown-content class="f-dropdown content">
+            <h1>Free Variable</h1>
+			<p>
+				No actions possible.
+			</p>
+        </div>
+        
+        <div id="dropdown-bvar" data-dropdown-content class="f-dropdown content">
+            <h1>Bounded Variable</h1>
+	        <input id="inputAlphaConversion" class="error" type="text" placeholder="New name">
+			<small id="errorMsgAlphaConversion" class="error errorMsgContainer">Invalid entry</small>
+            <a id="buttonAlphaConversion" href="#" class="button tiny secondary">Apply α-conversion</a>
+        </div>
+        
+        <div id="dropdown-redex" data-dropdown-content class="f-dropdown content">
+            <h1>Reducable Expression</h1>
+            <a id="buttonBetaReduction" href="#" class="button tiny secondary">Apply β-reduction</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

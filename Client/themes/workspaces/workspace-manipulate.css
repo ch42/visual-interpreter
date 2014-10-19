@@ -1,0 +1,44 @@
+/*
+**	THEME FOR WORKSPACE "Manipulate"
+*/
+
+
+/* 
+**	EXPRESSION RENDERING 
+**	Workspace uses mixin "mixin-render-expr-basic" to render lambda expressions
+*/
+.workspace-manipulate .expr .predecessor {
+	display: none;
+}
+
+
+/* 	
+**	DROPDOWNS 
+*/
+.workspace-manipulate #dropdown-redex {
+	display: none;
+}
+
+.workspace-manipulate #dropdown-bvar {
+	display: none;
+}
+
+.workspace-manipulate #dropdown-fvar {
+	display: none;
+}
+
+/* 
+**	CONTAINER VISIBILITY AND STYLES 
+*/
+
+.workspace-manipulate #outputContainer {
+	min-height: 600px;
+}
+
+.workspace-manipulate #historyContainer {
+	display: none;
+}
+
+
+
+

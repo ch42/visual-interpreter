@@ -1,0 +1,19 @@
+/*
+**	MIXIN "Highlight Free Variables"
+*/
+
+.mixin-highlight-fvars .fvar {
+    background-color: #ddd;
+    min-width: 1em;
+    padding: 0.14em 0.1em 0.14em 0.1em;
+    border-radius: 0.2em;
+}
+
+.mixin-highlight-fvars .fvar.selection {
+    font-size: 1.3em;
+    font-weight: 400 !important;
+}
+
+.mixin-highlight-fvars #dropdown-fvar {
+    display: inline;
+}

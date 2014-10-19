@@ -1,0 +1,104 @@
+/*
+**	MIXIN "Render Expression Basic"
+*/
+
+.mixin-render-expr-basic .expr * {
+	display: inline-block;
+}
+
+.mixin-render-expr-basic .expr .bvar,
+.mixin-render-expr-basic .expr .fvar {
+	font-weight: 300;
+	color: #000;
+}
+
+.mixin-render-expr-basic .expr .keyword {
+	margin: 0.2em 0.1em 0.2em 0.1em;
+}
+
+.mixin-render-expr-basic .expr .keyword > .name {
+	display: block !important;
+	transition: background-color 0.3s;
+	background-color: #ddd;
+	color: #000;
+	font-size: 0.8em !important;
+	font-weight: 300 !important;
+	min-width: 1em;
+	padding: 0.14em 0.24em 0.14em 0.24em;
+}
+
+
+.mixin-render-expr-basic .expr .keyword > .name:hover {
+	background-color: #e8e8e8;
+}
+
+.mixin-render-expr-basic .expr .keyword > .expr {
+	background-color: #fff;
+	border: 1px #ddd solid;
+	border-top: none;
+	padding: 0.3em 0.5em 0.3em 0.5em;
+	
+}
+
+.mixin-render-expr-basic .expr [data-lambda]::before {
+	content: "λ";
+	font-size: 1.3em;
+	font-weight: 200;
+	padding-right: 0.14em;
+}
+
+.mixin-render-expr-basic .expr [data-lambda="optional"]::before {
+	display: none;
+}
+
+.mixin-render-expr-basic .expr [data-dot]::before {
+	content: ".";
+}
+
+.mixin-render-expr-basic .expr [data-brackets], 
+.mixin-render-expr-basic .expr [data-lambda]::before {
+	color: #999;
+}
+
+.mixin-render-expr-basic .expr [data-brackets]::before, 
+.mixin-render-expr-basic .expr [data-brackets]::after {
+	font-weight: 100 !important;
+}
+
+.mixin-render-expr-basic .expr [data-brackets="obligatory"]::before {
+	content: "(";
+	margin-right: -0.07em;
+}
+
+.mixin-render-expr-basic .expr [data-brackets="obligatory"]::after {
+	content: ")";
+	margin-left: -0.07em;
+}
+
+/*
+** Fixes for Gecko Rendering-Engine (Firefox etc.)
+*/ 
+@-moz-document url-prefix() {
+	.mixin-render-expr-basic .expr .fvar {
+		margin: 0em 0.13em 0em 0.13em;
+	}
+
+	.mixin-render-expr-basic .expr .bvar {
+		margin: 0em 0.13em 0em 0.13em;
+	}
+	
+	.mixin-render-expr-basic .expr [data-lambda]::before {
+		font-weight: 300;
+		padding-right: 0.03em;
+	}
+
+	.mixin-render-expr-basic .expr [data-brackets="obligatory"]::before {
+		margin: 0;
+		padding: 0em 0.05em 0em 0.1em;
+	}
+	
+	.mixin-render-expr-basic .expr [data-brackets="obligatory"]::after {
+		margin: 0;
+		padding: 0em 0.1em 0em 0.05em;
+	}	
+}
